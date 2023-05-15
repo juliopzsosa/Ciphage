@@ -1,6 +1,6 @@
 <!--
   Autor: Julio Paz Sosa
-  Fecha: 2023-05-13
+  Fecha: 2023-05-14
   Descripción: Sitio impulsado por Alura Latam para encriptar y desencriptar texto
 -->
 
@@ -12,30 +12,60 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ciphage</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
   
+  <header>
+    <div class="cabecera">
+      <a href="https://www.aluracursos.com/"><img src="./imagenes/alura.png" height="24"></a>
+      <h3 class="leyendaCabecera">Impulsado por Alura Latam</h3>
+    </div>
+  </header>
+  
   <main>
-    
+ 
     <div>
       <h1>Ciphage</h1>
       <p>¿Necesitas cifrar o descifrar un mensaje? Ciphage es la solución.</p>
     </div>
-  
-    <textarea name="" id="" cols="30" rows="10" placeholder="Coloca aquí tu mensaje..."></textarea>
-  
-    <div><p>*Solo letras minúsculas</p></div>
-    
+
+    <textarea id="caja" rows="9" placeholder="Coloca aquí tu mensaje..."></textarea>
+
     <div>
-      <button id="cifrar">Cifrar</button>
-      <button id="descifrar">Descifrar</button>
-      <button id="copiar">Copiar</button>
+      <p id="indicacion">*Solo letras minúsculas</p>
     </div>
-   
+
+    <div class="botonera">
+      <button class="botones" id="cifrar">Cifrar</button>
+      <button class="botones" id="descifrar">Descifrar</button>
+      <button class="botones" id="copiar">Copiar</button>
+    </div>
+
     <script src="./script.js"></script>
-  
+
   </main>
+
+  <footer>
+    <div>
+      <ul>
+        <li>Desarrollado en 2023</li>
+        <li>por Julio P.</li>
+      </ul>
+    </div>
+    <p id="sigueme">Sígueme en:</p>
+    <div id="logos">
+      <ul>
+        <li><a href="https://github.com/juliopzsosa"><img src="./imagenes/github-mark-white.png" height="36"></a></li>
+        <li><a href="https://www.linkedin.com/in/juliopzsosa/"><img src="./imagenes/In-White-128.png" height="36"></a></li>
+      </ul>
+    </div>
+  </footer>
 
 </body>
 

@@ -1,0 +1,162 @@
+/*
+  Autor: Julio Paz Sosa, ChatGPT-3
+  Fecha: 2023-05-14
+ */
+
+body {
+  font-family: "Fira Code", monospace;
+}
+
+header {
+  background-color: #643bc0;
+  padding: 10px 0;
+}
+
+.cabecera {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.leyendaCabecera {
+  color: white;
+  margin-left: 10px;
+  vertical-align: super;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #303030;
+  color: white;
+  height: 80vh;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 55px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+p {
+  font-weight: lighter;
+  font-size: 17px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+textarea {
+  width: 65%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #303030;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+#indicacion {
+  font-size: 13px;
+  text-align: left;
+}
+
+.botonera {
+  display: flex;
+  justify-content: center;
+}
+
+.botones {
+  font-family: "Fira Code", monospace;
+  width: 150px;
+  padding: 10px 14px;
+  margin: 0px 14px;
+  font-size: 18px;
+  color: white;
+  background: #643bc0;
+  border: none;
+  border-radius: 10px;
+  transition: 0.5s all;
+  cursor: pointer;
+}
+
+.botones:hover {
+  background: #8f4eff;
+}
+
+footer {
+  background-color: #643bc0;
+  color: white;
+  padding: 30px;
+  font-weight: lighter;
+  font-size: 13px;
+  text-align: center;
+}
+
+#sigueme {
+  margin: 25px 0 10px 0;
+  font-size: 15px;
+}
+
+#logos ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+#logos ul li {
+  margin: 12px;
+}
+
+#logos ul li a img {
+  height: 36px;
+}
+
+@media screen and (max-width: 768px) {
+  .cabecera {
+    margin: 0 0 0 15px;
+    display: flex;
+  }
+
+  .leyendaCabecera {
+    margin-left: 15px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 14px;
+    margin: 0 5px 25px 5px;
+  }
+
+  textarea {
+    width: 85%;
+    font-size: 18px;
+  }
+
+  .botones {
+    width: 100px;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  footer {
+    padding: 20px auto;
+    font-size: 12px;
+  }
+
+  #logos ul li {
+    margin: 8px;
+  }
+
+  #logos ul li a img {
+    height: 30px;
+  }
+}
