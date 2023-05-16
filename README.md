@@ -1,6 +1,8 @@
 # Ciphage 🔒
 
-![Ciphage](./preview.gif)
+<p align="center">
+  <img src="./preview.gif" alt="Ciphage">
+</p>
 
 ## Description 📄
 
