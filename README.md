@@ -8,40 +8,15 @@
 
 Ciphage is a web project powered by [Alura Latam](https://www.aluracursos.com/) that allows you to securely exchange secret messages using easy-to-use text encryption. It employs a vowel substitution technique with encryption keys to ensure the security of your messages. Keep your conversations private with Ciphage!
 
-### <p align="center">Encryption Table</p>
+### Encryption Table
 
-<p align="center">
-  <table>
-    <thead>
-      <tr>
-        <th>Vowels</th>
-        <th>Encryption Keys</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td align="center">a</td>
-        <td align="center">ai</td>
-      </tr>
-      <tr>
-        <td align="center">e</td>
-        <td align="center">enter</td>
-      </tr>
-      <tr>
-        <td align="center">i</td>
-        <td align="center">imes</td>
-      </tr>
-      <tr>
-        <td align="center">o</td>
-        <td align="center">ober</td>
-      </tr>
-      <tr>
-        <td align="center">u</td>
-        <td align="center">ufat</td>
-      </tr>
-    </tbody>
-  </table>
-</p>
+| Vowels | Encryption Keys |
+| ------ | --------------- |
+| a      | ai              |
+| e      | enter           |
+| i      | imes            |
+| o      | ober            |
+| u      | ufat            |
 
 ## Usage 🚀
 
