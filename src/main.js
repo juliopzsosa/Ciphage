@@ -1,46 +1,70 @@
 const textarea = document.querySelector('textarea');
 
-// Selección de botones a través de sus IDs
 const cifrarButton = document.querySelector('#encrypt-button');
 const descifrarButton = document.querySelector('#decrypt-button');
 const copiarButton = document.querySelector('#ctc-button');
 
+const encryptionDict = {
+  'e': 'nf4NDW',
+  'i': 'PGp3bB',
+  'a': 'hzNy8P',
+  'o': 't7WzS2',
+  'u': 'yL4YVT',
+  '\n': 'dJs9rT',
+  ' ': 'k9zW8V',
+  ',': 'n57XJb'
+};
 
-function cifrarTexto(texto) {
-    
-    texto = texto.replace(/e/g, 'tk5h7f');
-    texto = texto.replace(/i/g, '7crx2k');
-    texto = texto.replace(/a/g, 'cq7vj4');
-    texto = texto.replace(/o/g, 'nk986h');
-    texto = texto.replace(/u/g, '93tbr7');
-    return texto;
+const decryptionDict = {
+  'nf4NDW': 'e',
+  'PGp3bB': 'i',
+  'hzNy8P': 'a',
+  't7WzS2': 'o',
+  'yL4YVT': 'u',
+  'dJs9rT': '\n',
+  'k9zW8V': ' ',
+  'n57XJb': ','
+};
+
+function cifrarTexto(text) {
+  for (const [key, value] of Object.entries(encryptionDict)) {
+    text = text.replace(new RegExp(key, 'g'), value);
+  }
+  return text;
 }
 
-function descifrarTexto(texto) {
-    texto = texto.replace(/tk5h7f/g, 'e');
-    texto = texto.replace(/7crx2k/g, 'i');
-    texto = texto.replace(/cq7vj4/g, 'a');
-    texto = texto.replace(/nk986h/g, 'o');
-    texto = texto.replace(/93tbr7/g, 'u');
-    return texto;
+function descifrarTexto(text) {
+  for (const [key, value] of Object.entries(decryptionDict)) {
+    text = text.replace(new RegExp(key, 'g'), value);
+  }
+  return text;
 }
+
+/* function normalizeText(text) {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, ''); // Elimina los acentos
+} */
+
+textarea.addEventListener('input', function () {
+  textarea.value = normalizeText(textarea.value);
+});
 
 cifrarButton.addEventListener('click', function () {
-    
-    var texto = textarea.value.toLowerCase();
-    
-    texto = cifrarTexto(texto); // Llamada a la función cifrarTexto
-    textarea.value = texto;
+  var text = textarea.value;
+  text = cifrarTexto(text);
+  textarea.value = text;
 });
 
 descifrarButton.addEventListener('click', function () {
-    var texto = textarea.value.toLowerCase();
-    texto = descifrarTexto(texto);
-    textarea.value = texto;
+  var text = textarea.value;
+  text = descifrarTexto(text);
+  textarea.value = text;
 });
 
 copiarButton.addEventListener('click', function () {
-    var texto = textarea.value;
-    navigator.clipboard.writeText(texto);
-    alert('Texto copiado al portapapeles');
+  var text = textarea.value;
+  navigator.clipboard.writeText(text);
+  alert('Texto copiado al portapapeles');
 });
