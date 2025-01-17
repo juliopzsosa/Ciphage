@@ -1,8 +1,8 @@
 const textarea = document.querySelector('textarea');
 
-const cifrarButton = document.querySelector('#encrypt-button');
-const descifrarButton = document.querySelector('#decrypt-button');
-const copiarButton = document.querySelector('#ctc-button');
+const encryptButton = document.querySelector('#encrypt-button');
+const decryptButton = document.querySelector('#decrypt-button');
+const copyButton = document.querySelector('#ctc-button');
 
 const encryptionDict = {
   'e': 'nf4NDW',
@@ -15,56 +15,38 @@ const encryptionDict = {
   ',': 'n57XJb'
 };
 
-const decryptionDict = {
-  'nf4NDW': 'e',
-  'PGp3bB': 'i',
-  'hzNy8P': 'a',
-  't7WzS2': 'o',
-  'yL4YVT': 'u',
-  'dJs9rT': '\n',
-  'k9zW8V': ' ',
-  'n57XJb': ','
-};
+const decryptionDict = Object.fromEntries(
+  Object.entries(encryptionDict).map(([key, value]) => [value, key])
+);
 
-function cifrarTexto(text) {
+function encryptText(text) {
   for (const [key, value] of Object.entries(encryptionDict)) {
     text = text.replace(new RegExp(key, 'g'), value);
   }
   return text;
 }
 
-function descifrarTexto(text) {
+function decryptText(text) {
   for (const [key, value] of Object.entries(decryptionDict)) {
     text = text.replace(new RegExp(key, 'g'), value);
   }
   return text;
 }
 
-/* function normalizeText(text) {
-  return text
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, ''); // Elimina los acentos
-} */
-
-textarea.addEventListener('input', function () {
-  textarea.value = normalizeText(textarea.value);
-});
-
-cifrarButton.addEventListener('click', function () {
+encryptButton.addEventListener('click', function () {
   var text = textarea.value;
-  text = cifrarTexto(text);
+  text = encryptText(text);
   textarea.value = text;
 });
 
-descifrarButton.addEventListener('click', function () {
+decryptButton.addEventListener('click', function () {
   var text = textarea.value;
-  text = descifrarTexto(text);
+  text = decryptText(text);
   textarea.value = text;
 });
 
-copiarButton.addEventListener('click', function () {
-  var text = textarea.value;
-  navigator.clipboard.writeText(text);
+copyButton.addEventListener('click', function () {
+  textarea.select();
+  document.execCommand('copy');
   alert('Texto copiado al portapapeles');
 });
