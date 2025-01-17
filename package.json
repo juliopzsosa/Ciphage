@@ -1,0 +1,18 @@
+{
+  "name": "ciphage",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "css": "sass --load-path=node_modules styles.scss src/style.css"
+  },
+  "devDependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3",
+    "sass": "^1.83.4",
+    "vite": "^6.0.5"
+  }
+}

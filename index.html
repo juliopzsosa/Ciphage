@@ -1,72 +1,47 @@
-<!--
-  Autor: Julio Paz Sosa
-  Fecha: 2023-05-14
-  Descripción: Sitio impulsado por Alura Latam para encriptar y desencriptar texto
--->
-
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ciphage</title>
-  <link rel="stylesheet" href="./reset.css">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500;700&display=swap" rel="stylesheet">
-</head>
-
-<body>
-  
-  <header>
-    <div class="cabecera">
-      <a href="https://www.aluracursos.com/"><img src="./images/alura.png" height="24"></a>
-      <h3 class="leyendaCabecera">Impulsado por Alura Latam</h3>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Ciphage</title>
+  </head>
+  <body>
+    <div class="container d-flex justify-content-between pt-4 pb-2">
+      <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-translate"></i>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item">Español</a></li>
+          <li><a class="dropdown-item">English</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-brightness-high-fill"></i>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item">Light</a></li>
+          <li><a class="dropdown-item">Dark</a></li>
+          <li><a class="dropdown-item">System</a></li>
+        </ul>
+      </div>
     </div>
-  </header>
-  
-  <main>
- 
-    <div>
-      <h1>Ciphage</h1>
-      <p>¿Necesitas cifrar o descifrar un mensaje? Ciphage es la solución.</p>
+    <div class="container py-4">
+      <h1 class="display-4 fw-bolder mb-3 text-center">Ciphage</h1>
+      <p class="text-center mb-5">¿Necesitas cifrar o descifrar un mensaje? Ciphage es la solución.</p>
+      <textarea class="col-12" rows="9" placeholder="Coloca tu mensaje aquí..."></textarea>
+      <p class="text-center">Solo letras minúsculas y sin acentos</p>
+      <div class="d-flex justify-content-evenly mt-3 mx-5">
+        <button id="encrypt-button" class="btn btn-primary col-2">Cifrar</button>
+        <button id="decrypt-button" class="btn btn-primary col-2">Descifrar</button>
+        <button id="ctc-button" class="btn btn-primary col-2">Copiar</button>
+      </div>
     </div>
-
-    <textarea id="caja" rows="9" placeholder="Coloca aquí tu mensaje..."></textarea>
-
-    <div>
-      <p id="indicacion">*Solo letras minúsculas y sin acentos</p>
-    </div>
-
-    <div class="botonera">
-      <button class="botones" id="cifrar">Cifrar</button>
-      <button class="botones" id="descifrar">Descifrar</button>
-      <button class="botones" id="copiar">Copiar</button>
-    </div>
-
-    <script src="./script.js"></script>
-
-  </main>
-
-  <footer>
-    <div>
-      <ul>
-        <li>Desarrollado en 2023</li>
-        <li>por Julio P.</li>
-      </ul>
-    </div>
-    <p id="sigueme">Sígueme en:</p>
-    <div id="logos">
-      <ul>
-        <li><a href="https://github.com/juliopzsosa"><img src="./images/github-mark-white.png" height="36"></a></li>
-        <li><a href="https://www.linkedin.com/in/juliopzsosa/"><img src="./images/In-White-128.png" height="36"></a></li>
-      </ul>
-    </div>
-  </footer>
-
-</body>
-
+  </body>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="/src/main.js"></script>
 </html>
